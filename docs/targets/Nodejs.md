@@ -1,6 +1,6 @@
 # Command Line Applications
 
-After completing the [installation steps](../README.md#installation), you should be
+After completing the [installation steps](../Intro.md#installation), you should be
 able to invoke `elementary` at your command line. The next step, then, is to write a bit
 of code that will make some noise. Consider the example below: we first import the `ElementaryNodeRenderer`
 from the npm package, establish a callback for the "load" event, and then initialize the renderer.
