@@ -13,6 +13,10 @@ const config = {
   organizationName: 'elemaudio', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
 
+  scripts: [
+    {src: 'https://plausible.io/js/plausible.js', defer: true, 'data-domain': 'docs.elementary.audio'}
+  ],
+
   presets: [
     [
       '@docusaurus/preset-classic',
