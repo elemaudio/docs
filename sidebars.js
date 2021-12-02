@@ -7,7 +7,7 @@ const sidebars = {
 
   // But you can create a sidebar manually
   docs: [
-    'Intro',
+    'Getting_Started',
     {
       type: 'category',
       label: 'Targets',
