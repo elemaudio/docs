@@ -17,11 +17,13 @@ category.
 
 ### Basics
 
-* [el.const](./reference/sr.md)
-* [el.sr](./reference/sr.md)
+* [el.const](./reference/const.md)
 * [el.counter](./reference/counter.md)
-* [el.ms2samps](./reference/ms2samps.md)
 * [el.db2gain](./reference/db2gain.md)
+* [el.ms2samps](./reference/ms2samps.md)
+* [el.select](./reference/select.md)
+* [el.sr](./reference/sr.md)
+* [el.tau2pole](./reference/tau2pole.md)
 
 ### Delays
 

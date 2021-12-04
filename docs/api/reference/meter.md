@@ -1,4 +1,8 @@
-# el.meter
+---
+sidebar_label: el.meter
+---
+
+# el.meter([props], x)
 
 :::tip Stable
 Full support across available targets
