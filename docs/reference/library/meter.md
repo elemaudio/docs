@@ -1,9 +1,8 @@
-# Analysis
+# el.meter
 
-Event emitting nodes for analyzing parts of the signal graph.
-
-
-### el.meter
+:::tip Stable
+Full support across available targets
+:::
 
 A pass-through node which analyses its incoming signal, measuring the
 maximum and minimum peak value each block. The result is emitted through the
