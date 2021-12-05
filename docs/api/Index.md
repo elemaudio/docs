@@ -38,8 +38,8 @@ category.
 
 ### Signals
 
-* [el.env](./reference/env.md)
-* [el.select](./reference/select.md)
 * [el.adsr](./reference/adsr.md)
+* [el.env](./reference/env.md)
 * [el.latch](./reference/latch.md)
+* [el.select](./reference/select.md)
 * [el.seq](./reference/seq.md)
