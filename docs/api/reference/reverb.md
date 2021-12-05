@@ -1,11 +1,14 @@
-# Freeverb
+---
+sidebar_label: el.freeverb
+---
 
-An implementation of the classic Freeverb algorithm.
+# el.freeverb([props], feedback, damping, x)
 
+:::tip Stable
+Full support across available targets
+:::
 
-### el.freeverb([props], feedback, damping, x)
-
-A simple reverb implementation following the classic Freeverb algorithm.
+A simple reverb implementing the classic Freeverb algorithm.
 
 See https://ccrma.stanford.edu/~jos/pasp/Freeverb.html
 
