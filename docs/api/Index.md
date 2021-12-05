@@ -46,6 +46,18 @@ category.
 * [el.noise](./reference/noise.md)
 * [el.pinknoise](./reference/pinknoise.md)
 
+### Oscillators
+
+* [el.blepsaw](./reference/blepsaw.md)
+* [el.blepsquare](./reference/blepsquare.md)
+* [el.bleptriangle](./reference/bleptriangle.md)
+* [el.cycle](./reference/cycle.md)
+* [el.phasor](./reference/phasor.md)
+* [el.saw](./reference/saw.md)
+* [el.square](./reference/square.md)
+* [el.train](./reference/train.md)
+* [el.triangle](./reference/triangle.md)
+
 ### Reverb
 
 * [el.freeverb](./reference/freeverb.md)
