@@ -125,7 +125,7 @@ const my = candyWrap({
 core.render(my.supersaw({voices: 6, spread: 10, frequency: 440}));
 ```
 
-Read more about the syntactic sugar helpers in the [Top Level API](../reference/TopLevel.md).
+Read more about the syntactic sugar helpers in the [Top Level API](../api/TopLevel.md).
 
 Now, when we write a composite node like this and construct it using `createNode` or the helper
 functions, we ultimately receive a node which has not yet decayed to its primitive components. This
