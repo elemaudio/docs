@@ -41,6 +41,10 @@ category.
 
 * [el.rand](./reference/rand.md)
 
+### Reverb
+
+* [el.freeverb](./reference/freeverb.md)
+
 ### Signals
 
 * [el.adsr](./reference/adsr.md)
