@@ -27,10 +27,10 @@ category.
 
 ### Delays
 
-* [el.z](./reference/z.md)
 * [el.delay](./reference/delay.md)
 * [el.tapIn](./reference/tapIn.md)
 * [el.tapOut](./reference/tapOut.md)
+* [el.z](./reference/z.md)
 
 ### Dynamics
 
