@@ -1,7 +1,12 @@
-# Native
+---
+sidebar_label: el.metro
+---
 
-The underlying set of native building blocks from which all other library functions
-are composed, and to which all library functions ultimately decay.
+# el.metro([props])
+
+:::tip Stable
+Full support across available targets
+:::
 
 ### el.metro
 
@@ -78,12 +83,3 @@ metro event objects.
 | -------- | --------- | ----------------------------------------------- |
 | name     | undefined | String | Identifies a metro node by name        |
 | interval | undefined | Number | Metronome period in milliseconds       |
-
-### el.rand
-
-Generates a stream of random numbers uniformly distributed on the range [0, 1].
-
-#### Props
-
-None
-

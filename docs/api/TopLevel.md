@@ -82,11 +82,11 @@ currently only supported in the Elementary command line tool.
 
 #### Event: 'meter'
 
-The "meter" event fires any time one or more [Meter nodes](./library/Analysis.md#el.meter) are placed into a rendering graph.
+The "meter" event fires any time one or more [Meter nodes](./reference/meter.md) are placed into a rendering graph.
 
 #### Event: 'metro'
 
-The "metro" event fires any time one or more [Metro nodes](./library/Native.md#el.metro) are placed into a rendering graph.
+The "metro" event fires any time one or more [Metro nodes](./reference/metro.md) are placed into a rendering graph.
 
 ### Renderer.render(a, b, c, d, ...)
 
