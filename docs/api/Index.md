@@ -32,6 +32,10 @@ category.
 * [el.tapIn](./reference/tapIn.md)
 * [el.tapOut](./reference/tapOut.md)
 
+### Dynamics
+
+* [el.compress](./reference/compress.md)
+
 ### Signals
 
 * [el.env](./reference/env.md)
