@@ -41,6 +41,11 @@ category.
 
 * [el.rand](./reference/rand.md)
 
+### Noise
+
+* [el.noise](./reference/noise.md)
+* [el.pinknoise](./reference/pinknoise.md)
+
 ### Reverb
 
 * [el.freeverb](./reference/freeverb.md)
