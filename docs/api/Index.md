@@ -50,6 +50,11 @@ category.
 
 * [el.freeverb](./reference/freeverb.md)
 
+### Samples
+
+* [el.sample](./reference/sample.md)
+* [el.table](./reference/table.md)
+
 ### Signals
 
 * [el.adsr](./reference/adsr.md)
