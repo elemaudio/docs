@@ -37,6 +37,27 @@ category.
 
 * [el.compress](./reference/compress.md)
 
+### Filters
+
+* [el.allpass](./reference/allpass.md)
+* [el.bandpass](./reference/bandpass.md)
+* [el.biquad](./reference/biquad.md)
+* [el.convolve](./reference/convolve.md)
+* [el.dcblock](./reference/dcblock.md)
+* [el.df11](./reference/df11.md)
+* [el.highpass](./reference/highpass.md)
+* [el.highshelf](./reference/highshelf.md)
+* [el.lowpass](./reference/lowpass.md)
+* [el.lowshelf](./reference/lowshelf.md)
+* [el.notch](./reference/notch.md)
+* [el.peak](./reference/peak.md)
+* [el.pink](./reference/pink.md)
+* [el.pole](./reference/pole.md)
+* [el.scope](./reference/scope.md)
+* [el.sm](./reference/sm.md)
+* [el.smooth](./reference/smooth.md)
+* [el.zero](./reference/zero.md)
+
 ### Math
 
 * [el.rand](./reference/rand.md)
