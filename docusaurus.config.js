@@ -47,6 +47,7 @@ const config = {
           alt: 'Elementary Audio Docs',
           src: 'img/Logo.svg',
           href: 'https://www.elementary.audio',
+          target: '_self',
         },
         items: [
           {
