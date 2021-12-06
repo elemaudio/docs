@@ -4,8 +4,8 @@ sidebar_label: el.convolve
 
 # el.convolve([props], x)
 
-:::tip Stable
-Full support across available targets
+:::caution Partial Support
+Available in the Node.js cli target, but not yet in webaudio or the plugin.
 :::
 
 A convolution node which reads an impulse response from disk and convolves it with
