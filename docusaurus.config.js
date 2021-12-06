@@ -5,8 +5,8 @@
 const config = {
   title: 'Elementary Audio Docs',
   tagline: 'Simplifying the way we write audio software',
-  url: 'https://docs.elementary.audio',
-  baseUrl: '/',
+  url: 'https://www.elementary.audio',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
