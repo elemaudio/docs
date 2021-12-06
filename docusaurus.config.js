@@ -46,6 +46,7 @@ const config = {
         logo: {
           alt: 'Elementary Audio Docs',
           src: 'img/Logo.svg',
+          href: 'https://www.elementary.audio',
         },
         items: [
           {
@@ -66,7 +67,7 @@ const config = {
         logo: {
           alt: 'Elementary Audio Logo',
           src: 'img/Lockup_Dark.svg',
-          href: '/',
+          href: 'https://www.elementary.audio',
         },
         copyright: `Copyright © ${new Date().getFullYear()} Elementary Audio, LLC. Built with Docusaurus.`,
       },

@@ -45,21 +45,21 @@ function Footer() {
         <div className={styles.elem__footer__links}>
           {links.map((item, i) => (
             <div key={i}>
-              <Link href={item.href} className={styles.elem__footer__link}>
+              <a href={item.href} className={styles.elem__footer__link}>
                 {item.label}
-              </Link>
+              </a>
             </div>
           ))}
         </div>
       )}
       {logo && (
-        <Link href="/">
+        <a href={logo.href}>
           <ThemedImage
             className={styles.elem__footer__logo}
             alt={logo.alt}
             sources={sources}
           />
-        </Link>
+        </a>
       )}
       {copyright && (
         <div className={styles.elem__footer__text}>{copyright}</div>
