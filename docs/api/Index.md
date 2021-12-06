@@ -14,6 +14,7 @@ category.
 ### Analysis
 
 * [el.meter](./reference/meter)
+* [el.scope](./reference/scope)
 
 ### Basics
 
@@ -61,6 +62,7 @@ category.
 ### Math
 
 * [el.rand](./reference/rand.md)
+* See [Math](./reference/Math.md)
 
 ### Noise
 

@@ -1,7 +1,10 @@
 # Math
 
-Basic utilities for performing mathematical operations over various input signals.
+:::tip Stable
+Full support across available targets
+:::
 
+Basic utilities for performing mathematical operations over various input signals.
 
 ### el.in
 
