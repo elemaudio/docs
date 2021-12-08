@@ -1,7 +1,7 @@
 # Plugin Dev Kit
 
 The Plugin Dev Kit is currently in public beta for MacOS. Windows and Linux
-will be following shortly. MacOS users may download the plugin binaries [here](https://www.dropbox.com/s/ul20u6lpofrviv2/PluginDevKit-v0.10.5.zip?dl=0).
+will be following shortly. MacOS users may [download the latest plugin binaries here](https://github.com/nick-thompson/elementary/releases/latest).
 
 ## Getting Started
 
