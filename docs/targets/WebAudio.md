@@ -27,6 +27,8 @@ Here, the `ElementaryWebAudioRenderer.initialize` function expects at least one 
 and an optional second argument which will be passed on to the construction of the underlying AudioWorkletNode.
 See the documentation for the AudioWorkletNode options object [here](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/AudioWorkletNode).
 
+## Virtual File System
+
 The underlying Elementary processor supports additional configuration through the `processorOptions` field
 of the AudioWorkletNode options object. In particular, this field can be used to pre-load a set of sample buffers
 that can later be read from by nodes like `el.sample` or `el.table`. This option is configured via the `virtualFileSystem`
