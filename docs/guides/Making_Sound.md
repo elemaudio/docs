@@ -15,6 +15,7 @@ you've finished this guide and you're ready to dig in deeper:
 * [Digital Signal Processing on Wikipedia](https://en.wikipedia.org/wiki/Digital_signal_processing)
 * [Julius O. Smith III's Online Books](https://ccrma.stanford.edu/~jos/)
 * [Seeing Circles and Sines](https://jackschaedler.github.io/circles-sines-signals/)
+* [SOS Synth Secrets](https://www.soundonsound.com/synthesizers/synth-secrets)
 * [The Audio Programmer](https://theaudioprogrammer.com/)
 * [DSPRelated](https://www.dsprelated.com/)
 * [Earlevel Engineering](https://www.earlevel.com/main/)
