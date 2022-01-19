@@ -8,6 +8,7 @@ const sidebars = {
   // But you can create a sidebar manually
   docs: [
     'Getting_Started',
+    'Changelog',
     {
       type: 'category',
       label: 'Targets',

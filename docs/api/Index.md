@@ -13,8 +13,10 @@ category.
 
 ### Analysis
 
-* [el.meter](./reference/meter)
-* [el.scope](./reference/scope)
+* [el.meter](./reference/meter.md)
+* [el.scope](./reference/scope.md)
+* [el.fft](./reference/fft.md)
+* [el.snapshot](./reference/snapshot.md)
 
 ### Basics
 
@@ -26,6 +28,7 @@ category.
 * [el.select](./reference/select.md)
 * [el.sr](./reference/sr.md)
 * [el.tau2pole](./reference/tau2pole.md)
+* [el.time](./reference/time.md)
 
 ### Delays
 

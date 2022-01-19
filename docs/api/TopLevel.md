@@ -98,6 +98,11 @@ This method should be called exactly once each time you need to change your rend
 invocation prompts Elementary to reconcile the current state of the rendering graph with the new desired
 state, and make any necessary changes to migrate the rendering engine from one to the other.
 
+_Added in v0.11.0_, `render()` now returns a set of simple statistics to provide insights into the cost
+of a given render cycle. The return value is an object with properties representing the number of nodes
+added, the number of edges added, and the number of properties written in a given render pass, as well
+as an elapsed time delta (in milliseconds) measuring the time spent rendering your changes.
+
 ### Renderer.initialize
 
 This method installs the necessary communication mechanisms between the Renderer and the

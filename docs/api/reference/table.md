@@ -11,7 +11,8 @@ Full support across available targets
 Loads a lookup table which is then read from with a position determined by the
 incoming signal phase. The table can either be loaded directly or from a file on disk.
 
-The lookup position is given as a normalized phase value, so for example, driving
+The lookup position is given as a normalized phase value with linear interpolation for
+lookup positions that fall between two distinct values. For example, driving
 a lookup table with a simple phasor will sweep through the entire lookup table at
 the rate of the phasor (this example is great for wavetable synthesis). To read
 only a partial segment of the wavetable, you can multiply and add to the phasor such
