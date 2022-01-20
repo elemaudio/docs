@@ -22,14 +22,47 @@ for details.
 
 ## Installation
 
-To start, you'll first need to install the Elementary npm package:
+To start, you'll first need to install the Elementary npm package. Beginning in v0.11.0, Elementary is available
+in one of two packages: the free, limited `@elemaudio/core-lite` package, and the paid, pro `@elemaudio/core` package.
+
+### npm
+
+#### @elemaudio/core-lite
+
+If you want to get started immediately with the free package, you can find it on npm
+just like you'd normally expect:
 
 ```bash
-npm install --save @nick-thompson/elementary
+npm install --save @elemaudio/core-lite
 ```
 
 If you're building an app for the browser, then that's it, you're done! If you're building
-at the command line for a desktop application, see below.
+at the command line for a desktop application, or using the Plugin Dev Kit for audio plugin development, see below.
+
+#### @elemaudio/core
+
+If you need the extra firepower of the pro `@elemaudio/core` package, purchasing a license is simple.
+
+1. Head to [https://www.elementary.audio/account](https://www.elementary.audio/account) to make an account and sign in
+2. Head to [https://www.elementary.audio/pricing](https://www.elementary.audio/pricing) to purchase your Pro license
+3. Configure npm for Elementary's Private Registry
+4. `npm install --save @elemaudio/core`
+
+To configure npm for the Elementary Private Registry, you'll find instructions in your account dashboard
+alongside your API key. Those instructions are repeated here:
+
+```
+# Point npm to the Elementary private registry for the @elemaudio package scope
+$ npm config set @elemaudio:registry "https://www.elementary.audio/api/v1/registry/"
+
+# Configure npm with your new API Key
+$ npm config set "//www.elementary.audio/api/v1/registry/:_authToken" "$YOUR_API_KEY_HERE"
+```
+
+If you're building an app for the browser, then that's it, you're done! If you're building
+at the command line for a desktop application, or using the Plugin Dev Kit for audio plugin development, see below.
+
+### Command line
 
 #### MacOS and Linux
 
@@ -42,6 +75,10 @@ $ curl -fsSL https://www.elementary.audio/install.sh | sh
 You can also install the appropriate binaries for your platform manually, downloading
 from [the releases page](https://github.com/nick-thompson/elementary/releases) on this repository,
 and unpacking the zip file to a directory of your choosing.
+
+### Plugin Dev Kit
+
+See [Plugin Dev Kit Target](targets/Plugin.md)
 
 ## Examples
 

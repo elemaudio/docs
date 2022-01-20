@@ -6,6 +6,8 @@ sidebar_position: 2
 
 ## v0.11.0
 
+Jan 20, 2022
+
 * [Breaking] Convolution and all signal analysers moved out of the free tier package
 * [New] el.fft
 * [New] el.snapshot
