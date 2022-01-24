@@ -127,15 +127,15 @@ with `el.sin()`, and, remembering that [0, 2 * Pi] describes a complete cycle of
 signal which outputs a continguous sequence of sine wave cycles, 440 per second. The complete program in Elementary is as follows:
 
 ```js
-const el = require('@nick-thompson/elementary');
+import {ElementaryPluginRenderer as core, el} from '@elemaudio/core';
 
 function sineTone(t) {
   return el.sin(el.mul(2 * Math.PI, t));
 }
 
-elementary.core.on('load', function() {
+core.on('load', function() {
   let tone = sineTone(el.phasor(440));
-  elementary.core.render(tone);
+  core.render(tone);
 });
 ```
 

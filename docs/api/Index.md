@@ -1,7 +1,7 @@
 # Library Index
 
 ```js
-import {el} from '@nick-thompson/elementary';
+import {el} from '@elemaudio/core';
 ```
 
 The Elementary standard library is available as a named import `el` from the

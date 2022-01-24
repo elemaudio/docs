@@ -9,7 +9,7 @@ import {
   el,
   sugar,
   candyWrap,
-} from '@nick-thompson/elementary';
+} from '@elemaudio/core';
 ```
 
 The Elementary package provides a couple of top-level exports designed to facilitate easily
@@ -134,7 +134,7 @@ instance is created by invoking `Renderer.createNode`, as defined in the documen
 Using `Renderer.createNode` directly can be cumbersome:
 
 ```js
-import {ElementaryNodeRenderer as core, stdlib} from '@nick-thompson/elementary';
+import {ElementaryNodeRenderer as core, stdlib} from '@elemaudio/core';
 
 core.render(
   core.createNode(stdlib.cycle, {}, [500]),
@@ -149,7 +149,7 @@ The `sugar` function, abbreviated here `$`, is a small helper to clean this up a
 more flexible:
 
 ```js
-import {ElementaryNodeRenderer as core, stdlib, sugar as $} from '@nick-thompson/elementary';
+import {ElementaryNodeRenderer as core, stdlib, sugar as $} from '@elemaudio/core';
 
 core.render(
   $(stdlib.cycle, 500),

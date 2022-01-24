@@ -16,7 +16,7 @@ all we need is to wire up Elementary to start making noise:
 
 First we need to install Elementary from npm into our app:
 ```
-npm install --save @nick-thompson/elementary
+npm install --save @elemaudio/core
 ```
 
 Then add just a tiny bit of code using the `ElementaryPluginRenderer` as our core rendering
@@ -26,7 +26,7 @@ interface.
 import {
   ElementaryPluginRenderer as core,
    el
-} from '@nick-thompson/elementary';
+} from '@elemaudio/core';
 
 core.on('load', function(e) {
   // Render anything you like! This here is a simple stereo lowpass filter.

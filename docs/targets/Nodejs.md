@@ -6,7 +6,7 @@ of code that will make some noise. Consider the example below: we first import t
 from the npm package, establish a callback for the "load" event, and then initialize the renderer.
 
 ```javascript
-import {ElementaryNodeRenderer as core, el} from '@nick-thompson/elementary';
+import {ElementaryNodeRenderer as core, el} from '@elemaudio/core';
 
 core.on('load', function() {
   core.render(el.cycle(440), el.cycle(441));

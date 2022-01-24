@@ -108,7 +108,7 @@ core.render(core.createNode(supersaw, {voices: 6, spread: 10, frequency: 440}, [
 To ease the syntax here a bit, we can use Elementary's syntactic sugar helpers:
 
 ```js
-import {ElementaryNodeRenderer as core, sugar as $} from '@nick-thompson/elementary';
+import {ElementaryNodeRenderer as core, sugar as $} from '@elemaudio/core';
 
 core.render($(supersaw, {voices: 6, spread: 10, frequency: 440}));
 ```
@@ -116,7 +116,7 @@ core.render($(supersaw, {voices: 6, spread: 10, frequency: 440}));
 Or, using the `candyWrap` helper:
 
 ```js
-import {ElementaryNodeRenderer as core, candyWrap} from '@nick-thompson/elementary';
+import {ElementaryNodeRenderer as core, candyWrap} from '@elemaudio/core';
 
 const my = candyWrap({
   supersaw: supersaw,

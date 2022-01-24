@@ -6,7 +6,7 @@ establish a callback for the "load" event, initialize the renderer by passing in
 and an optional configuration object, then connect the resulting AudioWorkletNode to your desired destination.
 
 ```javascript
-import {ElementaryWebAudioRenderer as core, el} from '@nick-thompson/elementary';
+import {ElementaryWebAudioRenderer as core, el} from '@elemaudio/core';
 
 core.on('load', function() {
   core.render(el.cycle(440), el.cycle(441));
