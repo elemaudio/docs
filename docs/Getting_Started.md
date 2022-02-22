@@ -95,9 +95,4 @@ And of course you can open these example files, poke around, and edit as you lik
 
 ## Licensing
 
-Elementary is available for use under either the PolyForm Strict 1.0.0 license, or under
-the terms of a commercial license, at your choosing. Please see LICENSE.md in the npm package
-for the full text of the PolyForm Strict 1.0.0 license, and please contact nick@elementary.audio to inquire for a commercial license.
-
-For use under the PolyForm Strict 1.0.0 license you must also include a note, "Made with Elementary Audio" either
-somewhere on the visible part of your application or webpage, or within the documentation.
+See [https://www.elementary.audio/license](https://www.elementary.audio/license)
