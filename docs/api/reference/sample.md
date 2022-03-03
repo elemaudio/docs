@@ -2,7 +2,7 @@
 sidebar_label: el.sample
 ---
 
-# el.sample([props], t)
+# el.sample([props], t, [rate])
 
 :::tip Stable
 Full support across available targets
@@ -10,7 +10,14 @@ Full support across available targets
 
 
 Loads a sample from disk and triggers its playback on the rising edge of an incoming
-pulse train. Expects exactly one child, the pulse train to trigger playback.
+pulse train. Expects at least one child, the pulse train to trigger playback. A second, optional,
+child signal is accepted which continuously directs the sample's playback rate. For example,
+
+```js
+el.sample({path: 'kick.wav'}, el.train(1), 1);   // Equivalent to the default playback
+el.sample({path: 'kick.wav'}, el.train(1), 0.5); // Half speed playback
+el.sample({path: 'kick.wav'}, el.train(1), el.add(1, el.cycle(1))); // Continuous pitch modulation
+```
 
 Because each Elementary node has strictly one channel output, the `channel` prop
 can be used to decide which channel from the sample to propagate. In the example

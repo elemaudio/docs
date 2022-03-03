@@ -129,6 +129,33 @@ Computes the absolute value of the input signal. Expects exactly 1 child node.
 
 None
 
+### el.eq
+
+Compares the first input to the second input, returning 1 when the the two signals
+have equal values, and 0 otherwise.
+
+#### Props
+
+None
+
+### el.and
+
+Compares the first input to the second input with a binary "and" operation. Returns 1 when the two signals
+both have a value of 1, and 0 otherwise.
+
+#### Props
+
+None
+
+### el.or
+
+Compares the first input to the second input with a binary "or" operation. Returns 1 when either of the two signals
+has a value of 1, and 0 otherwise.
+
+#### Props
+
+None
+
 ### el.le
 
 Compares the first input to the second input, returning 1 when the first is less

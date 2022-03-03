@@ -4,6 +4,18 @@ sidebar_position: 2
 
 # Changelog
 
+## v0.11.5
+
+Mar 2, 2022
+
+* [Bugfix] Fixed an issue with hot reloading in the plugin dev kit
+* [New] el.eq
+* [New] el.and
+* [New] el.or
+* [New] el.seq2
+* `el.seq` now supports an offset property and an optional reset train
+* `el.sample` now supports an optional playback rate signal
+
 ## v0.11.0
 
 Jan 20, 2022
