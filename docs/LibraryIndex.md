@@ -1,12 +1,12 @@
 # Library Index
 
+The Elementary standard library is available as a named import `el` from the
+core npm package. This module provides a set of prebuilt signal processing
+functions to facilitate more easily assembling larger, complex applications.
+
 ```js
 import {el} from '@elemaudio/core';
 ```
-
-The Elementary standard library is available as a named import `el` from the
-top level npm package. This module provides a set of prebuilt signal processing
-functions to facilitate more easily assembling larger, complex applications.
 
 Below lists an index of all available standard library functions, organized by
 category.
