@@ -1,4 +1,8 @@
-# Library Index
+---
+slug: /reference
+---
+
+# Core Library Reference
 
 The Elementary standard library is available as a named import `el` from the
 core npm package. This module provides a set of prebuilt signal processing
