@@ -4,6 +4,25 @@ sidebar_position: 2
 
 # Changelog
 
+## v1.0.0
+
+Apr 4, 2022
+
+* [New] Official TypeScript support
+* [New] Offline rendering
+* [New] Run multiple Web Audio renderer instances
+* [New] el.accum
+* [New] core.reset() added for Web Audio and Offline renderers
+* [Perf] Composite nodes now memoized automatically
+* [Perf] Render/reconcile performance improved up to 100% on large graphs
+* [Breaking] Renderers moved into their own packages
+* [Breaking] Explicit trailing args now required for certain nodes
+* [Breaking] Removed `el.freeverb`
+* [Breaking] Removed the sugar API
+* [Breaking] Removed explicit memo API
+* Improved stability for hot reloading
+* Minor stability improvements and bugfixing
+
 ## v0.11.5
 
 Mar 2, 2022

@@ -24,6 +24,7 @@ category.
 
 ### Basics
 
+* [el.accum](./reference/accum.md)
 * [el.const](./reference/const.md)
 * [el.counter](./reference/counter.md)
 * [el.db2gain](./reference/db2gain.md)
