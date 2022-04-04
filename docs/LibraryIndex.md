@@ -84,10 +84,6 @@ category.
 * [el.train](./reference/train.md)
 * [el.triangle](./reference/triangle.md)
 
-### Reverb
-
-* [el.freeverb](./reference/freeverb.md)
-
 ### Samples
 
 * [el.sample](./reference/sample.md)

@@ -1,0 +1,93 @@
+import TOCInline from '@theme/TOCInline';
+
+# Migrating to v1.0
+
+The path from v0.11.x to v1.0.0 brought about a small set of breaking changes that were necessary
+for the stabilization of the Elementary core API. Here we enumerate each breaking change and provide
+suggestions for updating your code.
+
+<TOCInline toc={toc} />
+
+## Distinct Renderer Packages
+
+Before v1.0, Elementary shipped only an `@elemaudio/core` and `@elemaudio/core-lite` package, each of which
+provided the supported renderers in their exports. This was convenient initially, but became an issue which
+yielded package bloat, increased complexity when trying to update one renderer in isolation, and encouraged coupling.
+
+As of v1.0 each renderer is available in its own package, as detailed in the Packages section on the sidebar.
+
+```js
+// Old:
+import {el, ElementaryPluginRenderer} from '@elemaudio/core';
+
+// New:
+import {el} from '@elemaudio/core';
+import PluginRenderer from '@elemaudio/plugin-renderer';
+
+// Or:
+import {el} from '@elemaudio/core';
+import {default as core} from '@elemaudio/plugin-renderer';
+```
+
+You'll notice as well that the `@elemaudio/web-renderer` and `@elemaudio/offline-renderer` packages no longer
+export singleton renderer instances, they now export class constructors, allowing multiple instances running in
+parallel. This pattern is one we aim to gradually adopt in the Node.js renderer and Plugin renderer in future updates.
+
+```js
+// Old:
+import {ElementaryWebAudioRenderer as core} from '@elemaudio/core';
+
+core.initialize(...);
+core.render(...);
+
+// New:
+import WebRenderer from '@elemaudio/web-renderer';
+
+let core = new WebRenderer();
+
+core.initialize(...);
+core.render(...);
+```
+
+## Explicit trailing arguments
+
+As part of the move to support strong TypeScript definitions on the core library functions, the following nodes were
+changed to now explicitly require all trailing arguments in their invocations.
+
+* `el.sample`
+* `el.seq`
+* `el.seq2`
+* `el.phasor`
+
+In each of these cases, the last argument is for reset behavior. If you still don't need reset behavior, you can
+simply place a constant value 0 in the argument array.
+
+```js
+// Old:
+el.phasor(440);
+el.seq({seq: [1, 2, 3]}, el.train(1));
+
+// New:
+el.phasor(440, 0);
+el.seq({seq: [1, 2, 3]}, el.train(1), 0);
+```
+
+## Removed the explicit `memo` API
+
+Before v1.0, memoization for composite nodes required an explicit wrapper. This API has been removed as it is
+no longer needed; memoization for composite nodes now happens automatically. See [Understanding Memoization](./guides/Understanding_Memoization)
+for details.
+
+## Removed the sugar API
+
+Similar to the above change, the "sugar" API of v0.11.x has been removed in favor of a more clear and consistent API.
+In almost all cases, the sugar API was only relevant for composite nodes in the first place. Now that the composite node API
+and memoization have changed, this API is much less helpful. See [Understanding Memoization](./guides/Understanding_Memoization) for
+more details.
+
+## Removed `el.freeverb`
+
+In an effort to consolidate the core library around a better standard for the library API, `el.freeverb` has been removed. The original
+library code is available [here on GitHub](https://gist.github.com/nick-thompson/0473449fbbfd92776d19e28961738d28) and you're invited to
+use it freely in your own applications. When using this algorithm you're strongly encouraged to think about keys and memoization and how
+you can standardize the Freeverb API within the context of your own app.

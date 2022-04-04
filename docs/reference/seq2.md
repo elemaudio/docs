@@ -2,17 +2,16 @@
 sidebar_label: el.seq2
 ---
 
-# el.seq2([props], t, [r])
+# el.seq2([props], t, reset)
 
 :::tip Stable
 Full support across available targets
 :::
 
 A simple signal sequencer. Receives a sequence of values from the `seq` property
-and steps through them on each rising edge of an incoming pulse train. Expects at least
-one child, the pulse train to trigger the next step of the sequence. An optional second
-child may be provided: another control signal (pulse train) whose rising edge will reset
-the sequence position.
+and steps through them on each rising edge of an incoming pulse train. Expects two children, first
+the pulse train to trigger the next step of the sequence. The second child is another pulse train whose rising
+edge will reset the sequence position back to the beginning or to the index specified by the `offset` prop.
 
 This node is almost identical to `el.seq`, but for a rather simple difference: `el.seq`
 will only reset to its provided `offset` index on the rising edge of an incoming reset signal.

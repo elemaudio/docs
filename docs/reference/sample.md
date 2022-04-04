@@ -2,7 +2,7 @@
 sidebar_label: el.sample
 ---
 
-# el.sample([props], t, [rate])
+# el.sample([props], t, rate)
 
 :::tip Stable
 Full support across available targets
@@ -10,8 +10,8 @@ Full support across available targets
 
 
 Loads a sample from disk and triggers its playback on the rising edge of an incoming
-pulse train. Expects at least one child, the pulse train to trigger playback. A second, optional,
-child signal is accepted which continuously directs the sample's playback rate. For example,
+pulse train. Expects two children: first the pulse train to trigger playback, and second a
+signal which continuously directs the sample's playback rate. For example,
 
 ```js
 el.sample({path: 'kick.wav'}, el.train(1), 1);   // Equivalent to the default playback
