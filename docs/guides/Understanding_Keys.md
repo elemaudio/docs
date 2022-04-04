@@ -1,12 +1,12 @@
 # Understanding Keys
 
-Now that we've covered the [native rendering](./Native_Rendering.md) behavior in Elementary,
-we can move on to the functional, reactive behavior of the `core.render` API.
+This guide assumes that you've already read the [In Depth](../In_Depth) introduction to Elementary,
+and picks up where the In Depth introduction leaves off when it references keys.
 
 If your application only ever makes a single call to `core.render`, then this section won't
-really apply, and in such a case the behavior is explained completely in [native rendering](./Native_Rendering.md).
+really apply, and in such a case the behavior is well explained in [In Depth](./In_Depth).
 However, audio applications frequently exhibit dynamic behavior, and it's in this context that
-we'll explore what happens when you make multiple calls to `core.render`.
+we'll explore what happens when you make multiple successive calls to `core.render`.
 
 To start, let's examine a simple synthesizer:
 
@@ -37,7 +37,7 @@ MIDI controller, and the argument `e` is an object describing the event. When th
 we will update our `voices` object appropriately, and invoke `core.render` again with the result
 of calling `synth` with our updated voices.
 
-For brevity, I'm omitting the actual implementation of `updateVoices`, but we can imagine here that
+For brevity, we're omitting the actual implementation of `updateVoices`, but we can imagine here that
 such an implementation would look at the incoming event, `e`, and if it's a `noteOn` event, we'd update
 one of the voices in our array to set its `gate: 1.0` and its `frequency: e.noteFrequency`. Perhaps in
 such a case, our resulting voices array would look like this:

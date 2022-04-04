@@ -31,7 +31,7 @@ const sidebars = {
       items: [
         'guides/Making_Sound',
         'guides/Understanding_Keys',
-        'guides/Writing_Reusable_Components',
+        'guides/Understanding_Memoization',
         'guides/Sample_Accurate_Rendering',
       ],
     },
