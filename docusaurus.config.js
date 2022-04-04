@@ -39,7 +39,7 @@ const config = {
     ({
       colorMode: {
         defaultMode: 'light',
-        disableSwitch: true,
+        disableSwitch: false,
       },
       navbar: {
         title: 'Elementary Audio',
@@ -52,13 +52,18 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'Getting_Started',
+            docId: 'Introduction',
             position: 'left',
             label: 'Docs',
           },
           {
             href: 'https://github.com/elemaudio/docs',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            href: 'https://twitter.com/elemaudio',
+            label: 'Twitter',
             position: 'right',
           },
         ],

@@ -7,16 +7,21 @@ const sidebars = {
 
   // But you can create a sidebar manually
   docs: [
-    'Getting_Started',
+    'Introduction',
+    'Examples',
+    'In_Depth',
+    'Migrating_to_v1',
     'Changelog',
     {
       type: 'category',
-      label: 'Targets',
+      label: 'Packages',
       collapsed: false,
       items: [
-        'targets/Nodejs',
-        'targets/Plugin',
-        'targets/WebAudio',
+        'packages/core',
+        'packages/web-renderer',
+        'packages/node-renderer',
+        'packages/plugin-renderer',
+        'packages/offline-renderer',
       ],
     },
     {
@@ -25,10 +30,9 @@ const sidebars = {
       collapsed: false,
       items: [
         'guides/Making_Sound',
-        'guides/Native_Rendering',
-        'guides/Sample_Accurate_Rendering',
         'guides/Understanding_Keys',
         'guides/Writing_Reusable_Components',
+        'guides/Sample_Accurate_Rendering',
       ],
     },
     {
