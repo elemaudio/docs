@@ -7,6 +7,11 @@ the actual encoding/decoding to and from file is not handled here, just the actu
 Note that, while the command line renderer ([Node Renderer](./node-renderer.md)) currently requires the separate
 Elementary command line binary, this renderer actually runs properly in Node.js itself.
 
+:::info
+The `@elemaudio/offline-renderer` package is only available in the Elementary private registry for Pro
+license holders. Find more information on the [Pro license here](https://www.elementary.audio/pricing).
+:::
+
 ## Installation
 
 ```js

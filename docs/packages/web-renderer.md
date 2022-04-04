@@ -2,6 +2,12 @@
 
 The official package for rendering Elementary applications in web browsers using Web Audio.
 
+:::info
+The `@elemaudio/web-renderer` package is only available in the Elementary private registry for Pro
+license holders, however `@elemaudio/web-renderer-lite` is available on the public npm registry with an
+equivalent API, minus support for analysis and convolution nodes. Find more information on the [Pro license here](https://www.elementary.audio/pricing).
+:::
+
 ## Installation
 
 ```js
