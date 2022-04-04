@@ -32,10 +32,6 @@ core.on('load', function() {
 })();
 ```
 
-Here, the `ElementaryWebAudioRenderer.initialize` function expects at least one argument, an AudioContext,
-and an optional second argument which will be passed on to the construction of the underlying AudioWorkletNode.
-See the documentation for the AudioWorkletNode options object [here](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/AudioWorkletNode).
-
 ## Usage
 
 ```js
