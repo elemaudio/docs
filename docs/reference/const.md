@@ -4,10 +4,6 @@ sidebar_label: el.const
 
 # el.const([props])
 
-:::tip Stable
-Full support across available targets
-:::
-
 A constant value node whose value is set by the `value` prop. Commonly, you'll
 see the `const` node expressed as a numeric literal. For example, the following
 two expressions are equivalent.

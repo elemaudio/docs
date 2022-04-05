@@ -4,10 +4,6 @@ sidebar_label: el.allpass
 
 # el.allpass([props], fc, q, x)
 
-:::tip Stable
-Full support across available targets
-:::
-
 An allpass biquad filter with a cutoff frequency at `fc`, a Q of `q`, and which
 filters the input signal `x`.
 

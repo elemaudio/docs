@@ -4,10 +4,6 @@ sidebar_label: el.sample
 
 # el.sample([props], t, rate)
 
-:::tip Stable
-Full support across available targets
-:::
-
 
 Loads a sample from disk and triggers its playback on the rising edge of an incoming
 pulse train. Expects two children: first the pulse train to trigger playback, and second a

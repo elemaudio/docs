@@ -4,10 +4,6 @@ sidebar_label: el.metro
 
 # el.metro([props])
 
-:::tip Stable
-Full support across available targets
-:::
-
 ### el.metro
 
 Emits a pulse train signal much like `el.train`, alternating from 0 to 1 at a

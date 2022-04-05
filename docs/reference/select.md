@@ -4,10 +4,6 @@ sidebar_label: el.select
 
 # el.select([props], g, a, b)
 
-:::tip Stable
-Full support across available targets
-:::
-
 A simple conditional operator. Given a gate signal, `g`, on the range [0, 1],
 returns the signal `a` when the gate is high, and the signal `b` when the
 gate is low. For values of `g` between (0, 1), performs a linear interpolation

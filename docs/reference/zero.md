@@ -4,10 +4,6 @@ sidebar_label: el.zero
 
 # el.zero([props], b0, b1, x)
 
-:::tip Stable
-Full support across available targets
-:::
-
 Implements a simple one-zero filter. Expects the b0 coefficient as the first
 argument, the zero position b1 as the second argument, and the input to the filter as the third.
 

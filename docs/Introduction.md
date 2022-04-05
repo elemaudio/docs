@@ -61,10 +61,13 @@ as an audio plugin (MacOS, Windows; AU/VST3), and offline (file to file processi
 
 To understand how to target each platform, please see the following package documentation.
 
-* [@elemaudio/web-renderer](https://www.elementary.audio)
-* [@elemaudio/node-renderer](https://www.elementary.audio)
-* [@elemaudio/plugin-renderer](https://www.elementary.audio)
-* [@elemaudio/offline-renderer](https://www.elementary.audio)
+* [@elemaudio/web-renderer](./packages/web-renderer.md)
+  * @elemaudio/web-renderer-lite for free tier users
+* [@elemaudio/node-renderer](./packages/node-renderer.md)
+  * @elemaudio/node-renderer-lite for free tier users
+* [@elemaudio/plugin-renderer](./packages/plugin-renderer.md)
+* [@elemaudio/offline-renderer](./packages/offline-renderer.md)
+  * Pro tier users only
 
 ## Licensing
 

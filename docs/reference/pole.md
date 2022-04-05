@@ -4,10 +4,6 @@ sidebar_label: el.pole
 
 # el.pole([props], p, x)
 
-:::tip Stable
-Full support across available targets
-:::
-
 Implements a simple one-pole filter, also sometimes called a leaky integrator.
 Expects two children, the first is the pole position, the second is the signal to filter.
 

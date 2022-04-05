@@ -4,10 +4,6 @@ sidebar_label: el.scope
 
 # el.scope([props], x, [y, [...]])
 
-:::tip Stable
-Full support across available targets
-:::
-
 A pass-through node which buffers its incoming signal(s), and reports them to the
 JavaScript environment through the core Renderer event emitting interface.
 

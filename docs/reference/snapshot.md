@@ -4,10 +4,6 @@ sidebar_label: el.snapshot
 
 # el.snapshot([props], t, x)
 
-:::tip Stable
-Full support across available targets
-:::
-
 _Added in v0.11.0 (Pro tier only)_
 
 The snapshot node is conceptually very similar to `el.latch`, or sample and hold,

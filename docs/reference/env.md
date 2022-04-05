@@ -4,10 +4,6 @@ sidebar_label: el.env
 
 # el.env([props], atkPole, relPole, x)
 
-:::tip Stable
-Full support across available targets
-:::
-
 A one-pole envelope follower node with different attack and release times. This is
 quite similar to `el.pole(p, el.abs(x))` in implementation. Expects three children,
 the pole position for the attack phase, the pole position for the release phase, and

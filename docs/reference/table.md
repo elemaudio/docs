@@ -4,10 +4,6 @@ sidebar_label: el.table
 
 # el.table([props], t)
 
-:::tip Stable
-Full support across available targets
-:::
-
 Loads a lookup table which is then read from with a position determined by the
 incoming signal phase. The table can either be loaded directly or from a file on disk.
 

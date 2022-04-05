@@ -4,10 +4,6 @@ sidebar_label: el.phasor
 
 # el.phasor([props], rate, reset)
 
-:::tip Stable
-Full support across available targets
-:::
-
 Outputs a ramp from 0 to 1 at the given rate. Expects two children, the first providing
 the ramp rate in `hz`, the second a pulse train for resetting the phasor.
 

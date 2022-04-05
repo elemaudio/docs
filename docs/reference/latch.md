@@ -4,10 +4,6 @@ sidebar_label: el.latch
 
 # el.latch([props], t, x)
 
-:::tip Stable
-Full support across available targets
-:::
-
 A sample and hold node. Samples a new value from `x` on a rising edge of a pulse
 train `t`, then holds and emits that value until the next rising edge of `t`.
 

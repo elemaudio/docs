@@ -4,10 +4,6 @@ sidebar_label: el.tapOut
 
 # el.tapOut([props], xn)
 
-:::tip Stable
-Full support across available targets
-:::
-
 The tapOut node pairs with the tapIn node to provide special case behavior for implementing
 feedback around arbitrary parts of your signal graph. A tapOut node is identified by name,
 and its signal can be fed back into any part of your signal graph using a tapIn node by the

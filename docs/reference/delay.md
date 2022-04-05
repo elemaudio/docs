@@ -4,10 +4,6 @@ sidebar_label: el.delay
 
 # el.delay([props], len, fb, x)
 
-:::tip Stable
-Full support across available targets
-:::
-
 A variable-length delay line with a feedback component. Expects three children:
 
 1. The delay time in samples

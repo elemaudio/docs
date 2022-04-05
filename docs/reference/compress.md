@@ -4,10 +4,6 @@ sidebar_label: el.compress
 
 # el.compress([props], atkMs, relMs, threshold, ratio, sidechain, xn)
 
-:::tip Stable
-Full support across available targets
-:::
-
 A simple hard-knee compressor with parameterized attack, release, threshold,
 and ratio, with an optional sidechain input.
 

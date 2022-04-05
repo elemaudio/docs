@@ -4,10 +4,6 @@ sidebar_label: el.adsr
 
 # el.adsr([props], a, d, s, r, g)
 
-:::tip Stable
-Full support across available targets
-:::
-
 An exponential ADSR envelope generator, triggered by the gate signal `g`. When the
 gate is high (1), this generates the ADS phase. When the gate is low, the R phase.
 

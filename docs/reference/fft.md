@@ -4,10 +4,6 @@ sidebar_label: el.fft
 
 # el.fft([props], x)
 
-:::tip Stable
-Full support across available targets
-:::
-
 _Added in v0.11.0 (Pro tier only)_
 
 Analyzes its input signal `x` with a real value to complex value Fast Fourier Transform, emitting the

@@ -4,10 +4,6 @@ sidebar_label: el.meter
 
 # el.meter([props], x)
 
-:::tip Stable
-Full support across available targets
-:::
-
 A pass-through node which analyses its incoming signal, measuring the
 maximum and minimum peak value each block. The result is emitted through the
 core Renderer event interface with an event object matching the following

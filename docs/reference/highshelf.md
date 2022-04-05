@@ -4,10 +4,6 @@ sidebar_label: el.highshelf
 
 # el.highshelf([props], fc, q, gainDecibels, x)
 
-:::tip Stable
-Full support across available targets
-:::
-
 A lowshelf biquad filter with a cutoff frequency at `fc`, a Q of `q`, gain in decibels as `gainDecibels`, and which
 filters the input signal `x`.
 
