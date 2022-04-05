@@ -7,7 +7,7 @@ slug: /
 
 :::info Version 1.0 is now available
 We're thrilled to announce the release of our stable v1.0. If you're migrating from earlier versions
-of Elementary, please see our [migration guide](./Migrating_to_v1.md).
+of Elementary, please see our [migration guide](./Migrating_to_v1.mdx).
 :::
 
 Elementary is a JavaScript framework for writing high performance, native audio applications that

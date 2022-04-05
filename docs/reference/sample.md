@@ -39,7 +39,7 @@ el.sample({path: '/path/to/kick.wav', channel: 1}, el.train(1));
 * Note: the `path`, `channel`, and `data` prop are all related in that their job is to provide a resource from which to
   load the sample player.
     * Providing a `path` property will first attempt to look the file up in the pre-loaded virtual file
-      system (see [WebAudio](../../targets/WebAudio.md)), then fall back to a disk-read if running on a target that has disk access (i.e. the Plugin Dev Kit).
+      system, then fall back to a disk-read if running on a target that has disk access (i.e. the Plugin Dev Kit).
     * When falling back to a read from disk, the `channel` property will specify _which_ channel from a multi-channel sample file
       to load. `el.sample` outputs a mono signal, so you must choose _which_ channel you want to read from the underlying file.
     * When providing the `data` property, you'll pass either an Array or a Float32Array containing the raw sample buffer to be loaded

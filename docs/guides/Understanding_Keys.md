@@ -53,8 +53,8 @@ And similarly during a `noteOff` event we'll consult the voices object to set th
 `gate` value back to `0`.
 
 Now, after updating our voices, we re-run the `synth` function and then call `core.render` again. Here's
-where the behavior gets interesting. On the first call to `core.render`, we're again back at the behavior
-described completely in [native rendering](./Native_Rendering.md). On the second call, Elementary will compare the
+where the behavior gets interesting. On the first call to `core.render`, Elementary is starting from a
+blank slate and simply does the work to realize the graph you've provided. On the second call, Elementary will compare the
 new signal to render with the one that it has most recently rendered for you already. While doing this, Elementary
 will look for the the minimal set of changes to apply to the existing rendering to arrive at the new desired state, and
 apply those changes. This is much like the "virtual DOM diff" that React.js popularized for web applications.
