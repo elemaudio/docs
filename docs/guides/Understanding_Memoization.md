@@ -43,14 +43,14 @@ exactly what the reconciler needs to consider when trying to identify changes. B
 which is how we create a "Composite" node. As an example,
 
 ```js
-function MyComposite({props, context, children}) {
-  return el.add(
+function MyComposite({props, context, children}): NodeRepr_t {
+  return resolve(el.add(
     el.blepsaw(children[0]),
     el.blepsaw(el.mul(1.01, children[0])),
-  );
+  ));
 }
 
-function detunedSaws(props: Object, frequency: Node_Repr_t | number) : Node_Repr_t {
+function detunedSaws(props: Record<string, unknown>, frequency: NodeRepr_t | number) : NodeRepr_t {
   return createNode(MyComposite, props, [frequency]);
 }
 ```
@@ -84,7 +84,7 @@ props objects when using `createNode` for Composite nodes. However, if you reall
 out of this operation, you can use the reserved prop called `memoKey`.
 
 ```js
-function detunedSaws(props: Object, frequency: Node_Repr_t | number) : Node_Repr_t {
+function detunedSaws(props: Record<string, unknown>, frequency: NodeRepr_t | number) : NodeRepr_t {
   return createNode(MyComposite, Object.assign(props, {memoKey: 'someUniqueIdentifier'}), [frequency]);
 }
 ```

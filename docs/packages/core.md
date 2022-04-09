@@ -29,10 +29,10 @@ documentation on exactly which nodes are available and what they do, see the [Co
 ### createNode
 
 ```js
-function createNode(kind: string | Function, props: Object, children: array<Node_Repr_t | number>): Node_Repr_t;
+function createNode(kind: string | Function, props: Object, children: array<NodeRepr_t | number>): NodeRepr_t;
 ```
 
-A factory function for creating an audio node, `Node_Repr_t`. Every function available on `el` ultimately decays
+A factory function for creating an audio node, `NodeRepr_t`. Every function available on `el` ultimately decays
 to a series of calls to `createNode`.
 
 Typically, you'll only need to pay attention to this API for creating "Composite" nodes, which we discuss in
@@ -62,9 +62,9 @@ function myFilter(props, input) {
 function isNode(a: any): bool;
 ```
 
-A simple utility for identifying if the input argument is of type `Node_Repr_t`. You'll rarely need this,
+A simple utility for identifying if the input argument is of type `NodeRepr_t`. You'll rarely need this,
 but it's worth noting especially for TypeScript users that some of the `el.*` library functions have
-a return type of `Node_Repr_t | number`, and you may find utility in `isNode` in those scenarios.
+a return type of `NodeRepr_t | number`, and you may find utility in `isNode` in those scenarios.
 
 
 ### resolve
