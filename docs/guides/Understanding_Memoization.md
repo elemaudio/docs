@@ -12,7 +12,7 @@ This process of reconciling changes between two graphs is a notoriously difficul
 compounds with the scale of your application. Let's consider a hypothetical graph below to illustrate a very real example
 of rendering a new graph to apply a constant value change. We start with a graph like the following.
 
-(Image of graph, color a leaf node blue)
+![Image of an audio graph with a blue leaf node](../assets/MemoGuide_GraphA.jpg)
 
 Now let's imagine that this graph represents the audio process we want, and that we've already called `render()` to realize
 this graph, and we're hearing the expected results. Then a user input comes along, perhaps the user has dragged a slider
@@ -22,7 +22,7 @@ the user has set. In Elementary, we handle a change like this in the same way th
 build the graph that represents how our app should sound _now_, we call `render()` and we let Elementary handle the rest. For
 illustration, let's look at our new desired graph.
 
-(Image of graph, color the blue node red)
+![Image of the same audio graph, now with a red leaf node](../assets/MemoGuide_GraphB.jpg)
 
 We can see that the graph is identical, except that the node that used to be blue is now red. This is the only change we're
 asking for. But now we also see that by building this new graph and calling `render()`, Elementary has to go and compare this
