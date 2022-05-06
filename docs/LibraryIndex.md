@@ -102,3 +102,4 @@ category.
 * [el.select](./reference/select.md)
 * [el.seq](./reference/seq.md)
 * [el.seq2](./reference/seq2.md)
+* [el.sparseq](./reference/sparseq.md)
