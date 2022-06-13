@@ -2,30 +2,33 @@
 
 The official package for rendering Elementary applications within an audio plugin.
 
-Currently, applications using this renderer must be run from within the Elementary Plugin Dev Kit,
-which is installed separately, and **_currently supported only on MacOS 10.11+_**.
-
-:::info
-The `@elemaudio/plugin-renderer` package is available both on the public npm registry and in the Elementary private registry.
-:::
+Applications using this renderer must be run from within the Elementary Plugin Dev Kit, a separate
+audio plugin distributed with the npm package in VST3/AU formats, and **_currently supported only on MacOS 10.11+_**.
 
 ## Installation
 
 First, the npm package.
 
-```js
+```bash
 npm install --save @elemaudio/plugin-renderer
 ```
 
-Next, [download the latest plugin binaries here](https://github.com/nick-thompson/elementary/releases/latest), then:
+Next, the requisite plugin binaries are included in this npm package and can be copied to the appropriate install
+directories using the `elem-copy-binaries` command. Generally you will want to copy the binaries
+immediately after installing or updating to ensure that the plugin binaries match the version of the JavaScript
+included herein.
 
-1. Open up the DMG file and drag the appropriate plugin format to your install directory.
-   Typically the VST3 will go in `~/Library/Audio/Plug-Ins/VST3`, and the AU in `~/Library/Audio/Plug-Ins/Components`.
-2. Spin up a new web application dev server on `https://127.0.0.1:3000`. For a quick example, try `create-react-app`
-   out of the box. See the note below on provisioning a dev certificate for serving your app over https.
+```bash
+npx elem-copy-binaries
+```
+
+Finally, the audio plugin will look at `https://127.0.0.1:3000` to load your application, so you'll need to spin
+up your server before proceeding. For a quick example, try `create-react-app` out of the box. See the note below
+on provisioning a dev certificate for serving your app over https.
 
 At this point, with your dev server running, you can open the Elementary Plugin Dev Kit inside your DAW
-and see your web application rendered there within the plugin window. Now we wire up Elementary as in the example below to start making noise.
+and see your web application rendered there within the plugin window. Now we wire up Elementary as in the example
+below to start making sound.
 
 ## Example
 
@@ -76,6 +79,42 @@ with two arguments: `core.render(leftOut, rightOut)`.
 The `RenderStats` object returned by this call provides some insight into what happened during the reconciliation
 process: how many new nodes and edges were added to the graph, how long it took, etc.
 
+### dispatch
+
+```js
+core.dispatch(eventName: string, payload);
+```
+
+The `dispatch` method on the `PluginRenderer` interface is unique to Elementary's Audio Plugin runtime, and can be used
+for communicating with the underlying audio processor within the DAW. There are two supported event types that can be
+dispatched to the audio processor: `saveState`, and `setParameterValue`.
+
+#### saveState
+
+```js
+core.dispatch('saveState', JSON.stringify(myAppState));
+```
+
+See the `loadState` event description below for more information; this mechanism can be used to inform the underlying
+processor of any state that should be persisted by the audio plugin host (e.g. the DAW). This is necessary for behaviors
+like saving and loading DAW project files. The payload here should be a string, and will be relayed back to your application
+by the host via the loadState event at appropriate times.
+
+#### setParameterValue
+
+```js
+core.dispatch('setParameterValue', parameterName, newValue);
+```
+
+The `setParameterValue` event can be dispatched to the underlying audio plugin to ask the plugin host to update a
+given parameter value. This is necessary for, say, capturing automation data in the host DAW's timeline as the user drags
+a knob in your user interface.
+
+Note: You should be careful here to ensure that your application state always reflects the values that the host knows
+for your parameters. Therefore you should think of `setParameterValue` as an opportunity for the host to perform the update,
+after which a `parameterValueChange` event will fire to inform you that the host has received your request and performed
+the update.
+
 ## Events
 
 The `NodeRenderer` singleton instance is an event emitter with an API matching that of the [Node.js Event Emitter](https://nodejs.org/api/events.html#class-eventemitter)
@@ -121,28 +160,39 @@ against a local certificate authority.
 There are a few features of the `PluginRenderer` that are unique to the audio
 plugin context.
 
-### Event: `'/macro/\*'`
+### Event: `'parameterValueChange'`
 
-The `/macro/\*` event fires any time one of the eight macro parameter values changes
-inside the DAW itself. These events will be enumerated by the index of the parameter changed. That is,
-when the first parameter is changed the event name will be `'/macro/0'`, when the second parameter is
-changed, the event name will be `'/macro/1'`, etc.
-
-The argument given to any subscribed callbacks will simply be the new parameter value
-as a number on the range [0, 1].
+The `parameterValueChange` event fires any time one of the eight macro parameter values changes
+inside the DAW itself. The associated event object passed to your callback will specify the ID of the
+parameter whose value has changed, and the new value given. The new value given will be a number on
+the range [0, 1].
 
 Example:
 
 ```js
-core.on('/macro/5', function(v) {
-  setCutoffFrequency(20 + v * 18000);
+core.on('parameterValueChange', function(e) {
+  console.log(e.paramId); // e.g. "/macro/1"
+  console.log(e.value); // e.g. 0.193149
 });
 ```
 
-:::info
-Note: currently these 8 parameter values cannot be written from JavaScript. This will
-be addressed in a forthcoming update.
-:::
+### Event: `'loadState'`
+
+The loadState event fires any time the plugin host (e.g. the DAW) is attempting to assign new state
+to the plugin. This could be, for example, upon loading a saved project file: the DAW will open the
+plugin in its default state, and then send the loadState event with the relevant state for the saved
+project.
+
+The event object contains a single `value` property, which is a string carrying any information you may
+have requested to be saved using the `core.dispatch('saveState')` mechanism.
+
+Example:
+
+```js
+core.on('loadState', function(e) {
+  console.log(JSON.parse(e.value));
+});
+```
 
 ### Event: `'playhead'`
 
@@ -207,4 +257,3 @@ The Plugin DevKit itself currently ships with the follow constraints:
 In a near future update, we will formalize the process for shipping a production version of your plugin after building with the
 Plugin Dev Kit. That process will remove the above limitations.
 :::
-

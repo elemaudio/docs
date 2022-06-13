@@ -28,6 +28,7 @@ category.
 * [el.const](./reference/const.md)
 * [el.counter](./reference/counter.md)
 * [el.db2gain](./reference/db2gain.md)
+* [el.maxhold](./reference/maxhold.md)
 * [el.metro](./reference/metro.md)
 * [el.ms2samps](./reference/ms2samps.md)
 * [el.select](./reference/select.md)
@@ -38,6 +39,7 @@ category.
 ### Delays
 
 * [el.delay](./reference/delay.md)
+* [el.sdelay](./reference/sdelay.md)
 * [el.tapIn](./reference/tapIn.md)
 * [el.tapOut](./reference/tapOut.md)
 * [el.z](./reference/z.md)

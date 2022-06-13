@@ -33,6 +33,7 @@ const sidebars = {
         'guides/Understanding_Keys',
         'guides/Understanding_Memoization',
         'guides/Sample_Accurate_Rendering',
+        'guides/Private_Registry',
       ],
     },
     {

@@ -7,12 +7,6 @@ binaries, which are installed separately. The command line binaries are nearly a
 you can write and run your code as if you're writing a standard Node.js application that just also happens to know
 how to make sound.
 
-:::info
-The `@elemaudio/node-renderer` package is only available in the Elementary private registry for Pro
-license holders, however `@elemaudio/node-renderer-lite` is available on the public npm registry with an
-equivalent API, minus support for analysis and convolution nodes. Find more information on the [Pro license here](https://www.elementary.audio/pricing).
-:::
-
 ## Installation
 
 First, the npm package.
