@@ -52,7 +52,7 @@ function myFilterComposite({props, children}) {
 // A helper function which feels similar to the `el.*` functions which hides away
 // the explicit call to `createNode`.
 function myFilter(props, input) {
-  return createNode(myFilter, props, input);
+  return createNode(myFilterComposite, props, input);
 }
 ```
 
