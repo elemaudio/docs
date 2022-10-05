@@ -115,6 +115,14 @@ for your parameters. Therefore you should think of `setParameterValue` as an opp
 after which a `parameterValueChange` event will fire to inform you that the host has received your request and performed
 the update.
 
+#### resize
+
+```js
+core.dispatch('resize', {width: 500, height: 500});
+```
+
+Sends a request to the underlying plugin host to update the window size holding the plugin editor.
+
 ## Events
 
 The `PluginRenderer` singleton instance is an event emitter with an API matching that of the [Node.js Event Emitter](https://nodejs.org/api/events.html#class-eventemitter)
