@@ -103,7 +103,7 @@ by the host via the loadState event at appropriate times.
 #### setParameterValue
 
 ```js
-core.dispatch('setParameterValue', parameterName, newValue);
+core.dispatch('setParameterValue', {name: parameterName, value: newValue});
 ```
 
 The `setParameterValue` event can be dispatched to the underlying audio plugin to ask the plugin host to update a
@@ -117,11 +117,72 @@ the update.
 
 ## Events
 
-The `NodeRenderer` singleton instance is an event emitter with an API matching that of the [Node.js Event Emitter](https://nodejs.org/api/events.html#class-eventemitter)
+The `PluginRenderer` singleton instance is an event emitter with an API matching that of the [Node.js Event Emitter](https://nodejs.org/api/events.html#class-eventemitter)
 class.
 
 The renderer will emit events from underlying audio processing graph for nodes such as `el.meter`, `el.snapshot`, etc. See
 the reference documentation for each such node for details.
+
+### `'parameterValueChange'`
+
+The `parameterValueChange` event fires any time one of your parameter values changes
+inside the DAW itself. The associated event object passed to your callback will specify the ID of the
+parameter whose value has changed, and the new value given. The new value given will be a number on
+the range [0, 1].
+
+Example:
+
+```js
+core.on('parameterValueChange', function(e) {
+  console.log(e.paramId); // e.g. "feedback"
+  console.log(e.value); // e.g. 0.193149
+});
+```
+
+### `'loadState'`
+
+The loadState event fires any time the plugin host (e.g. the DAW) is attempting to assign new state
+to the plugin. This could be, for example, upon loading a saved project file: the DAW will open the
+plugin in its default state, and then send the loadState event with the relevant state for the saved
+project.
+
+The event object contains a single `value` property, which is a string carrying any information you may
+have requested to be saved using the `core.dispatch('saveState')` mechanism.
+
+Example:
+
+```js
+core.on('loadState', function(e) {
+  console.log(JSON.parse(e.value));
+});
+```
+
+### `'playhead'`
+
+The playhead event fires regularly to relay information about the host transport.
+
+```js
+interface PlayheadEvent {
+  bpm: number,
+  timeSigNumerator: number,
+  timeSigDenominator: number,
+  sampleTime: number,
+  ppqPosition: number,
+  ppqLoopStart: number,
+  ppqLoopEnd: number,
+  isPlaying: bool,
+  isRecording: bool,
+  isLooping: bool,
+};
+```
+
+Example:
+
+```js
+core.on('playhead', function(e) {
+  console.log(e);
+});
+```
 
 ## Virtual File System
 
@@ -155,78 +216,46 @@ $ BROWSER=false HTTPS=true SSL_CRT_FILE=./localhost-cert.pem SSL_KEY_FILE=./loca
 To generate a valid, custom SSL certificate, we recommend [mkcert](https://github.com/FiloSottile/mkcert) configured
 against a local certificate authority.
 
-## Specialization
+## Configuration
 
-There are a few features of the `PluginRenderer` that are unique to the audio
-plugin context.
+When the Plugin Dev Kit loads inside its host, it will first try to reach `https://127.0.0.1:3000/elementary.config.json`
+to retrieve a static JSON payload with configuration settings. An example configuration file is below.
 
-### Event: `'parameterValueChange'`
-
-The `parameterValueChange` event fires any time one of the eight macro parameter values changes
-inside the DAW itself. The associated event object passed to your callback will specify the ID of the
-parameter whose value has changed, and the new value given. The new value given will be a number on
-the range [0, 1].
-
-Example:
-
-```js
-core.on('parameterValueChange', function(e) {
-  console.log(e.paramId); // e.g. "/macro/1"
-  console.log(e.value); // e.g. 0.193149
-});
+```json
+{
+  "displayName": "BigDelay",
+  "company": "My Company",
+  "bundleId": "com.mycompany.bigdelay",
+  "version": "1.0.0",
+  "manufacturerCode": "MyCo",
+  "pluginCode": "BgDe",
+  "numInputChannels": 2,
+  "numOutputChannels": 2,
+  "window": {
+    "width": 753,
+    "height": 373,
+    "showToolbar": false
+  },
+  "parameters": [
+    { "paramId": "mix",     "name": "Mix",      "min": 0.0, "max": 1.0, "defaultValue": 1.0 },
+    { "paramId": "size",    "name": "Size",     "min": 0.0, "max": 1.0, "defaultValue": 0.5 },
+    { "paramId": "lowCut",  "name": "Lo-Cut",   "min": 0.0, "max": 1.0, "defaultValue": 0.0 },
+    { "paramId": "highCut", "name": "Hi-Cut",   "min": 0.0, "max": 1.0, "defaultValue": 1.0 }
+  ]
+}
 ```
 
-### Event: `'loadState'`
+### Parameters
 
-The loadState event fires any time the plugin host (e.g. the DAW) is attempting to assign new state
-to the plugin. This could be, for example, upon loading a saved project file: the DAW will open the
-plugin in its default state, and then send the loadState event with the relevant state for the saved
-project.
+Note in the above example file: the `parameters` property is an array which can be populated with
+as many parameters as you need. You must specify a `paramId`, `name`, `min`, `max` and `defaultValue` property
+for each given parameter in the list.
 
-The event object contains a single `value` property, which is a string carrying any information you may
-have requested to be saved using the `core.dispatch('saveState')` mechanism.
+### Window Size & Toolbar
 
-Example:
-
-```js
-core.on('loadState', function(e) {
-  console.log(JSON.parse(e.value));
-});
-```
-
-### Event: `'playhead'`
-
-The playhead event fires regularly to relay information about the host transport.
-
-```js
-interface PlayheadEvent {
-  bpm: number,
-  timeSigNumerator: number,
-  timeSigDenominator: number,
-  sampleTime: number,
-  ppqPosition: number,
-  ppqLoopStart: number,
-  ppqLoopEnd: number,
-  isPlaying: bool,
-  isRecording: bool,
-  isLooping: bool,
-};
-```
-
-Example:
-
-```js
-core.on('playhead', function(e) {
-  console.log(e);
-});
-```
-
-
-### Window Size
-
-You can configure what size the plugin window takes by serving a static configuration file
-from your dev server at `https://127.0.0.1:3000/elementary.config.json`. This file must match
-the example JSON specification below.
+By default, the Elementary Plugin Dev Kit will display a small pink toolbar with a window resizing handle.
+You can disable this toolbar by setting `showToolbar` false within the `window` property as in the example above.
+Window size and the available range for resizing can be configured using the following settings.
 
 ```json
 {
@@ -236,10 +265,20 @@ the example JSON specification below.
     "maxWidth": 1130,
     "maxHeight": 560,
     "minWidth": 565,
-    "minHeight": 280,
-    "resizable": true,
-    "preserveAspectRatio": true
+    "minHeight": 280
   }
+}
+```
+
+## Remote Configuration
+
+Finally, you can configure the Elementary Plugin Dev Kit to point to a URL _other_ than `localhost:3000` by providing
+a separate configuration file at `~/.ElementaryDevKitRemoteConfig.json`. This file may be used to provide a single `url`
+property directing the plugin where to connect to load your resources. Example:
+
+```json
+{
+  "url": "https://bigdelay.mycompany.com/static/"
 }
 ```
 
@@ -247,13 +286,10 @@ the example JSON specification below.
 
 The Plugin DevKit itself currently ships with the follow constraints:
 
-* It's currently MacOS only, 10.11+.
-* It's branded the "Elementary Dev Kit" and will show up in your DAW that way
-* It only exposes 8 parameters (which you can wire into your app, see below)
-* It will only load your code from `https://127.0.0.1:3000`
+* MacOS 10.11+ and Windows 10+
 * Only effect plugins are properly supported (MIDI information is not yet propagated)
 
 :::info
 In a near future update, we will formalize the process for shipping a production version of your plugin after building with the
-Plugin Dev Kit. That process will remove the above limitations.
+Plugin Dev Kit.
 :::
