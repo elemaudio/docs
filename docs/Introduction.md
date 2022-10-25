@@ -72,5 +72,5 @@ To understand how to target each platform, please see the following package docu
 ## Licensing
 
 Elementary is available to use under the [Elementary Audio SDK License Agreement](https://www.elementary.audio/license), which
-generally invites you to build and ship your code with Elementary without a fee unless you require the functionality offered
-in the Elementary Pro package. Pro license purchases can be made [on our pricing page](https://www.elementary.audio/pricing).
+invites you to build and ship your code with Elementary without a fee. We may introduce paid addon functionality through the Elementary
+Marketplace to accelerate your development process.

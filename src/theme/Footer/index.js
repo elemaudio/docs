@@ -26,12 +26,20 @@ function Footer() {
       label: 'Home',
     },
     {
-      href: 'https://www.elementary.audio/pricing',
-      label: 'Pricing',
+      href: 'https://www.elementary.audio/marketplace',
+      label: 'Marketplace',
     },
     {
-      href: 'https://www.elementary.audio/support',
-      label: 'Support',
+      href: 'https://www.elementary.audio/resources',
+      label: 'Resources',
+    },
+    {
+      href: 'https://buttondown.email/elemaudio/archive/',
+      label: 'Newsletter',
+    },
+    {
+      href: 'https://www.elementary.audio/license',
+      label: 'License',
     },
     {
       href: 'https://www.elementary.audio/contact',

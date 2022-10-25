@@ -12,7 +12,6 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  max-width: 36rem;
   padding-left: 2rem;
   padding-right: 2rem;
 }
