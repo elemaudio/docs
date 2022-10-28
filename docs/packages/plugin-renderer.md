@@ -3,7 +3,10 @@
 The official package for rendering Elementary applications within an audio plugin.
 
 Applications using this renderer must be run from within the Elementary Plugin Dev Kit, a separate
-audio plugin distributed with the npm package in VST3/AU formats, and **_currently supported only on MacOS 10.11+_**.
+audio plugin distributed with the npm package in VST3/AU formats, and supported only on the following platforms:
+
+* macOS 10.11+
+* Windows 10+
 
 ## Installation
 
