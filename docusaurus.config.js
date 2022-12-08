@@ -44,13 +44,6 @@ const config = {
         defaultMode: 'light',
         disableSwitch: false,
       },
-      announcementBar: {
-        id: 'support_us',
-        content: `If you're excited about Elementary, help us spread the word by following us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/elemaudio" >Twitter</a> ${TwitterSvg}`,
-        backgroundColor: '#FCE7F3',
-        textColor: '#0F172A',
-        isCloseable: true,
-      },
       navbar: {
         title: 'Elementary Audio',
         logo: {

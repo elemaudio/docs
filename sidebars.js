@@ -10,7 +10,6 @@ const sidebars = {
     'Introduction',
     'Examples',
     'In_Depth',
-    'Migrating_to_v1',
     'Changelog',
     {
       type: 'category',
@@ -33,7 +32,6 @@ const sidebars = {
         'guides/Understanding_Keys',
         'guides/Understanding_Memoization',
         'guides/Sample_Accurate_Rendering',
-        'guides/Private_Registry',
       ],
     },
     {

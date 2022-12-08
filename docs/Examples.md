@@ -5,7 +5,6 @@ We have an official set of official example code available on GitHub, generally 
 * [Web App Examples](https://github.com/elemaudio/web-examples)
 * [Command line Examples](https://github.com/nick-thompson/elementary)
 * [Offline Rendering Examples](https://github.com/elemaudio/offline-examples)
-* Plugin examples (coming soon...)
 
 ## CodePen
 

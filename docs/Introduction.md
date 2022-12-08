@@ -5,11 +5,6 @@ slug: /
 
 # Introduction
 
-:::info Version 1.0 is now available
-We're thrilled to announce the release of our stable v1.0. If you're migrating from earlier versions
-of Elementary, please see our [migration guide](./Migrating_to_v1.mdx).
-:::
-
 Elementary is a JavaScript framework for writing high performance, native audio applications that
 can run on a wide variety of target platforms. This is a novel approach to the way that we think about
 and write our audio software that prioritizes simplicity, iteration speed, developer experience, and time to market.
@@ -62,15 +57,11 @@ as an audio plugin (MacOS, Windows; AU/VST3), and offline (file to file processi
 To understand how to target each platform, please see the following package documentation.
 
 * [@elemaudio/web-renderer](./packages/web-renderer.md)
-  * @elemaudio/web-renderer-lite for free tier users
 * [@elemaudio/node-renderer](./packages/node-renderer.md)
-  * @elemaudio/node-renderer-lite for free tier users
 * [@elemaudio/plugin-renderer](./packages/plugin-renderer.md)
 * [@elemaudio/offline-renderer](./packages/offline-renderer.md)
-  * Pro tier users only
 
 ## Licensing
 
-Elementary is available to use under the [Elementary Audio SDK License Agreement](https://www.elementary.audio/license), which
-invites you to build and ship your code with Elementary without a fee. We may introduce paid addon functionality through the Elementary
-Marketplace to accelerate your development process.
+Elementary is not open source, but it is available to use under the [Elementary Audio SDK License Agreement](https://www.elementary.audio/license), which
+invites you to build and ship your code with Elementary without a fee.
