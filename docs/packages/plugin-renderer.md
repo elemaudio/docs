@@ -5,7 +5,7 @@ The official package for rendering Elementary applications within an audio plugi
 Applications using this renderer must be run from within the Elementary Plugin Dev Kit, a separate
 audio plugin distributed with the npm package in VST3/AU formats, and supported only on the following platforms:
 
-* macOS 10.11+
+* macOS 10.11+ (x86/arm64)
 * Windows 10+
 
 ## Installation
@@ -295,12 +295,40 @@ property directing the plugin where to connect to load your resources. Example:
 
 ## Limitations
 
-The Plugin DevKit itself currently ships with the follow constraints:
-
 * MacOS 10.11+ and Windows 10+
 * Only effect plugins are properly supported (MIDI information is not yet propagated)
 
-:::info
-In a near future update, we will formalize the process for shipping a production version of your plugin after building with the
-Plugin Dev Kit.
-:::
+## Export (Beta)
+
+When you're ready, you can package your plugin as a VST3 (Windows) or VST3/AU (MacOS) using the `elem-export`
+command.
+
+```bash
+$ npx elem-export --help
+
+Usage: elem-export [options] <assets>
+
+Example:
+  # With shorthand flags and a single index.html
+  elem-export -o dist -m manifest.json index.html
+
+  # With long flags and a directory of web assets
+  elem-export --outputDir=dist --manifest=manifest.json build/
+
+Options:
+  -o, --outputDir <path>             Path to the directy in which to place the exported binaries
+  -m, --manifest <path>              Path to the manifest file for your plugin
+  -h, --help                         Display this help menu
+  `);
+```
+
+Typically, you will want to prepare your web assets for production the same way you would in preparation for
+hosting on a static web server (i.e. bundling and minification). Once you've done that, point `elem-export` to
+the directory where your prepared assets are with the `-o` flag, and to your `manifest.json` file, which here is
+equivalent to the `elementary.config.json` discussed in the above configuration section.
+
+Note: if you intend to distribute your exported binaries to other parties, you must follow a few additional steps.
+First, in order to distribute a VST3, you must register and license the VST 3 Technology from Steinberg. Please see
+the Steinberg website for more information: https://developer.steinberg.help/display/VST/VST+3+Licensing. Next, on MacOS,
+the binaries produced via `elem-export` will need to be code signed with an appropriate certificate in order to run on
+another MacOS machine.
