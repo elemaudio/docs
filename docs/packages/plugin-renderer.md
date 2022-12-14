@@ -323,7 +323,9 @@ Options:
 ```
 
 Typically, you will want to prepare your web assets for production the same way you would in preparation for
-hosting on a static web server (i.e. bundling and minification). Once you've done that, point `elem-export` to
+hosting on a static web server (i.e. bundling and minification). This step is important; bundled assets within
+the exported plugin will be loaded from relative file URLs. If your assets reference each other with absolute
+paths, the exported plugin likely will fail to load. Now, once you've done that, point `elem-export` to
 the directory where your prepared assets are with the `-o` flag, and to your `manifest.json` file, which here is
 equivalent to the `elementary.config.json` discussed in the above configuration section.
 
