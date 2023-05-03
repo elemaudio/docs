@@ -67,6 +67,8 @@ category.
 * [el.scope](./reference/scope.md)
 * [el.sm](./reference/sm.md)
 * [el.smooth](./reference/smooth.md)
+* [el.svf](./reference/svf.md)
+* [el.svfshelf](./reference/svfshelf.md)
 * [el.zero](./reference/zero.md)
 
 ### Math

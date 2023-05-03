@@ -4,10 +4,8 @@ sidebar_label: el.bandpass
 
 # el.bandpass([props], fc, q, x)
 
-A simple bandpass biquad filter with a cutoff frequency at `fc`, a Q of `q`, and which
+A simple bandpass filter with a cutoff frequency at `fc`, a Q of `q`, and which
 filters the input signal `x`.
-
-Reference: https://www.musicdsp.org/en/latest/Filters/197-rbj-audio-eq-cookbook.html
 
 #### Props
 
