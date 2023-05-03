@@ -32,6 +32,8 @@ const sidebars = {
         'guides/Understanding_Keys',
         'guides/Understanding_Memoization',
         'guides/Sample_Accurate_Rendering',
+        'guides/Native_Integrations',
+        'guides/Custom_Native_Nodes',
       ],
     },
     {
