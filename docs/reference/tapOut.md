@@ -10,19 +10,29 @@ and its signal can be fed back into any part of your signal graph using a tapIn 
 same name.
 
 It's important to note that in the digital domain, feedback requires at least a single sample
-delay. For efficiency, the tapOut node implements an implicit delay _before_ the signal
-is propagated onwards and to any corresponding tapIn nodes. Consider for example the following
-render statement:
+delay. For efficiency, the tapOut node implements an implicit block-size delay _before_ the signal
+is propagated onwards and to any corresponding tapIn nodes.
+
+
+### Example
+
+This example implements a simple feedback loop with no other delay time other than the implicit block-size
+delay. Depending on the block size then, this example may exhibit characteristics of a comb filter or perhaps more
+of a feedback delay.
 
 ```js
-core.render(el.tapOut({size: 512, name: 'a'}, el.in({channel: 0})));
-```
+let input = el.in({channel: 0});
+let output = el.add(
+  // Propagate the input signal and insert a tap out
+  el.tapOut({name: 'a'}, input),
+  // Feed the tap back in here with a 0.5 gain in the loop
+  el.mul(
+    0.5,
+    el.tapIn({name: 'a'})
+  ),
+);
 
-Because we have no tapIn nodes in the above signal flow, the only behavior we will observe
-is the implicit delay in the tapOut node. Therefore this expression is equivalent to
-
-```js
-core.render(el.delay(512, 0, el.in({channel: 0})));
+core.render(output);
 ```
 
 #### Props
@@ -30,12 +40,7 @@ core.render(el.delay(512, 0, el.in({channel: 0})));
 | Name     | Default  | Type   | Description                                   |
 | -------- | -------- | ------ | --------------------------------------------- |
 | name     | ''       | String | Names the output tap                          |
-| size     | 512\*    | Number | Sets the delay length in samples              |
 
 
-* Note: the default size is set to the length of the block provided by the audio driver.
-  This may vary platform to platform, it is recommended that you explicitly provide a size.
-* Also note: for efficiency, the minimum size allowed is also the block length provided by
-  the audio driver, and will be implicitly clamped to that value if necessary. This constraint
-  will likely be lessened in a forthcoming release.
-
+* Note: the implicit delay is always exactly one block long. You therefore have some level of flexibility
+  in your use case by configuring the engine with a block size that suits your needs.
