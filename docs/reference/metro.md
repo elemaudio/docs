@@ -4,7 +4,10 @@ sidebar_label: el.metro
 
 # el.metro([props])
 
-### el.metro
+:::info
+Only available in the WASM-based renderers (web-renderer, offline-renderer). You may extend the runtime
+in your own integration with a similar processor if you like, but it is not provided by default.
+:::
 
 Emits a pulse train signal much like `el.train`, alternating from 0 to 1 at a
 given rate. Importantly, the `el.metro` ("Metronome") node is used for synchronized

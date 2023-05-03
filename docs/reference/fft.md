@@ -4,7 +4,10 @@ sidebar_label: el.fft
 
 # el.fft([props], x)
 
-_Added in v0.11.0 (Pro tier only)_
+:::info
+Only available in the WASM-based renderers (web-renderer, offline-renderer). You may extend the runtime
+in your own integration with the same FFT processors if you like, but it is not provided by default.
+:::
 
 Analyzes its input signal `x` with a real value to complex value Fast Fourier Transform, emitting the
 results of each analysis block as a JavaScript event through the core event emitter. The input
