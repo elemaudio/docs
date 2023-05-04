@@ -1,5 +1,12 @@
 # @elemaudio/node-renderer
 
+:::warning
+This package is deprecated, and continued use is no longer recommended.
+
+If you want to work with the command line, consider the [offline-renderer](./offline-renderer.md) or
+integrating Elementary into a Node.js addon as in the [Native Integrations guide](../guides/Native_Integrations.md).
+:::
+
 The official package for rendering Elementary applications at the command line using Node.js.
 
 Currently, applications using this renderer at the command line must be invoked by Elementary's command line

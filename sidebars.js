@@ -18,8 +18,6 @@ const sidebars = {
       items: [
         'packages/core',
         'packages/web-renderer',
-        'packages/node-renderer',
-        'packages/plugin-renderer',
         'packages/offline-renderer',
       ],
     },

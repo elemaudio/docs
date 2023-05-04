@@ -48,20 +48,3 @@ of that state. This design decision here is why working with Elementary can be f
 than the conventional approach.
 
 To deeply understand what's happening in this example, check out [In Depth](./In_Depth.md).
-
-## Supported Platforms
-
-As of v1.0 (the current stable version), Elementary applications can run in a web browser, at the command line via Node.js,
-as an audio plugin (MacOS, Windows; AU/VST3), and offline (file to file processing, for example) with minimal changes required in your code.
-
-To understand how to target each platform, please see the following package documentation.
-
-* [@elemaudio/web-renderer](./packages/web-renderer.md)
-* [@elemaudio/node-renderer](./packages/node-renderer.md)
-* [@elemaudio/plugin-renderer](./packages/plugin-renderer.md)
-* [@elemaudio/offline-renderer](./packages/offline-renderer.md)
-
-## Licensing
-
-Elementary is not open source, but it is available to use under the [Elementary Audio SDK License Agreement](https://www.elementary.audio/license), which
-invites you to build and ship your code with Elementary without a fee.

@@ -1,5 +1,12 @@
 # @elemaudio/plugin-renderer
 
+:::warning
+This package is deprecated, and continued use is no longer recommended.
+
+If you want to build audio plugins with Elementary, please see the [Native Integrations guide](../guides/Native_Integrations.md), and
+check out our [effects plugin example](https://github.com/elemaudio/effects-plugin).
+:::
+
 The official package for rendering Elementary applications within an audio plugin.
 
 Applications using this renderer must be run from within the Elementary Plugin Dev Kit, a separate
