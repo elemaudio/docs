@@ -57,7 +57,7 @@ Initializes the Elementary runtime within the provided AudioContext. Here, Eleme
 an AudioWorkletNode in which the Elementary runtime operates, and all subsequent operations will forward
 to the AudioWorkletNode.
 
-The second argument here is for configuring the AudioWorkletNode, see the available options [here on MDN](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/AudioWorkletNode). Note that this method supports the optional `processorOptions` object for initializing the virtual file system. See Virtual File System below for more details.
+The second argument here is for configuring the AudioWorkletNode, see the available options [here on MDN](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/AudioWorkletNode). **Note that this method supports the optional `processorOptions` object for initializing the virtual file system.** See Virtual File System below for more details.
 
 This method returns a promise which resolves to the underlying AudioWorkletNode itself, which you may use
 to connect into your Web Audio context destination directly, as in the example above.
@@ -150,8 +150,4 @@ core.render(el.sample({path: '/some/new/arbitrary/fileName.wav'}, el.train(1)))
 Note: Each virtual file system entry maps to a single channel of audio data. To load multi-channel sample
 data into the virtual file system, you should enumerate each channel as a differently named virtual file path.
 
-## MIDI
-
-The WebRenderer does not include MIDI support itself. We recommend pairing Elementary with the
-[Web MIDI API](https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API), or a third
-party library such as [WebMIDI.js](https://webmidijs.org/) to enable MIDI functionality.
+For more information, see [Virtual File System](../guides/Virtual_File_System.md).

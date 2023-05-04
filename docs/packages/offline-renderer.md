@@ -77,6 +77,11 @@ The options object expects the following properties:
 * `blockSize: number` – default 512
 * `virtualFileSystem: Object<string, Array<number>|Float32Array>` – default `{}`
 
+**Note** the difference here in the `initialize` API between the `offline-renderer` and the `web-renderer`: when initializing
+the `web-renderer` we must use the `processorOptions` field to propagate the `virtualFileSystem` argument due to the nature of
+Web Audio Worklets. Here, for the `offline-renderer`, we have no such constraint, thus we can pass the `virtualFileSystem` as a
+top-level entry on the initialization object.
+
 ### render
 
 ```js
@@ -178,6 +183,4 @@ core.process(inps, outs);
 Note: Each virtual file system entry maps to a single channel of audio data. To load multi-channel sample
 data into the virtual file system, you should enumerate each channel as a differently named virtual file path.
 
-## MIDI
-
-The OfflineRenderer does not include MIDI support itself.
+For more information, see [Virtual File System](../guides/Virtual_File_System.md).

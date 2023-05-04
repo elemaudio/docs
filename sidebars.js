@@ -31,6 +31,7 @@ const sidebars = {
         'guides/Sample_Accurate_Rendering',
         'guides/Native_Integrations',
         'guides/Custom_Native_Nodes',
+        'guides/Virtual_File_System',
       ],
     },
     {
