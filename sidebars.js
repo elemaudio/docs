@@ -10,7 +10,6 @@ const sidebars = {
     'Introduction',
     'Examples',
     'In_Depth',
-    'Changelog',
     {
       type: 'category',
       label: 'Packages',
