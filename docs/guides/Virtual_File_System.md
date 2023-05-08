@@ -6,6 +6,11 @@ node which manages playback of an audio sample, or `el.table` which performs an 
 read from a lookup table. Using the virtual file system enables internal shared memory optimizations
 and allows the audio processing nodes to remain lightweight.
 
+:::info
+While we refer to this feature as a virtual "file system," it's really just a flat storage object
+which maps from an arbitrary string name (key) to a single-channel buffer of audio data (value).
+:::
+
 ## Loading data into the VFS
 
 The process for loading data into the virtual file system depends on how you're using Elementary, although

@@ -2,10 +2,7 @@
 
 The official package for rendering Elementary applications offline, whether in Node.js or in the browser.
 Often this is used for file-based processing (reading files, processing them, and writing them to disk), though
-the actual encoding/decoding to and from file is not handled here, just the actual audio processing.
-
-Note that, while the command line renderer ([Node Renderer](./node-renderer.md)) currently requires the separate
-Elementary command line binary, this renderer actually runs properly in Node.js itself.
+the actual encoding/decoding to and from file is not handled here, just the audio processing.
 
 ## Installation
 

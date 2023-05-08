@@ -44,7 +44,7 @@ import WebRenderer from '@elemaudio/web-renderer';
 let core = new WebRenderer();
 ```
 
-No arguments provided; you can construct multiple WebRenderer's and run them through your
+No arguments provided; you can construct multiple WebRenderer instances and run them through your
 Web Audio application as you like. See `initialize()` for connecting to WebAudio.
 
 ### initialize
@@ -60,7 +60,17 @@ to the AudioWorkletNode.
 The second argument here is for configuring the AudioWorkletNode, see the available options [here on MDN](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/AudioWorkletNode). **Note that this method supports the optional `processorOptions` object for initializing the virtual file system.** See Virtual File System below for more details.
 
 This method returns a promise which resolves to the underlying AudioWorkletNode itself, which you may use
-to connect into your Web Audio context destination directly, as in the example above.
+to connect into your Web Audio context destination directly, as in the example above:
+
+```js
+let node = await core.initialize(ctx, {
+  numberOfInputs: 0,
+  numberOfOutputs: 1,
+  outputChannelCount: [2],
+});
+
+node.connect(ctx.destination);
+```
 
 ### render
 
