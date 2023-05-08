@@ -4,7 +4,7 @@ sidebar_label: el.table
 
 # el.table([props], t)
 
-Loads a lookup table from a buffer in the [virtual file system](../guides/Virtual_File_System.md), from which
+Loads a lookup table from a buffer in the [virtual file system](../guides/Virtual_File_System.md), from which it
 performs an interpolated read with a position determined by the incoming signal phase.
 
 The lookup position is given as a normalized phase value with linear interpolation for

@@ -3,14 +3,14 @@
 One of Elementary's primary goals is to provide a comprehensive vocabulary of
 native audio processing nodes from which functional, declarative composition
 can derive a huge set of higher level audio processes. But sometimes that's not
-quite enough; sometimes you will need particular audio processing primitives
+quite enough; sometimes you will need audio processing primitives
 that Elementary doesn't provide:
 
 * maybe you have existing DSP in C++ that you want to lean on
 * maybe the constraints around expressing feedback loops in JavaScript preclude the type of audio process that you want to build
 * maybe you have certain performance considerations for a particular, static piece of your process
 
-Whatever your reason, Elementary's engine offers an API for extending the vocabulary
+Whatever your reason, Elementary's engine offers an API for extending its vocabulary
 with your own, custom built, native audio processing nodes in C++. This guide
 illustrates the process for using this API.
 

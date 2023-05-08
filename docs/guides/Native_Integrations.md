@@ -90,7 +90,7 @@ Runtime(double sampleRate, int blockSize);
 
 Apply graph rendering instructions.
 
-Depending on the message passing interface you decide, you may
+Depending on the message passing interface you select, you may
 need to write your own serialization/deserialization step to the `elem::js::Value` type. There is a
 provided `elem::js::parseJSON(std::string const& serialized)` utility for just this purpose if JSON suits
 your needs.
