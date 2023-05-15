@@ -34,7 +34,7 @@ public:
         // TODO
     }
 
-    void process (elem::BlockContext<FloatType> const& ctx) override
+    void process (elem::BlockContext<float> const& ctx) override
     {
         // TODO
     }
@@ -64,7 +64,7 @@ public:
         }
     }
 
-    void process (elem::BlockContext<FloatType> const& ctx) override
+    void process (elem::BlockContext<float> const& ctx) override
     {
         std::fill_n(ctx.outputData, ctx.numSamples, value.load())
     }
