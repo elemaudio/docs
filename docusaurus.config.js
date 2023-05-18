@@ -28,7 +28,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-          editUrl: 'https://github.com/elemaudio/docs/edit/main/',
+          editUrl: 'https://github.com/elemaudio/docs/blob/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
