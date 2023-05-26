@@ -19,7 +19,7 @@ an `imag` property, representing the results of the FFT analysis.
 
 Example:
 ```js
-core.render(el.fft({name: "myfft"}, el.blepsaw(20)));
+core.render(el.fft({size: 1024, name: "myfft"}, el.blepsaw(20)));
 
 core.on('fft', function(e) {
   console.log(e); // { source: "myfft", data: { real: [...], imag: [...] } }
