@@ -37,9 +37,12 @@ function createNode(kind: string | Function, props: Object, children: array<Node
 A factory function for creating an audio node, `NodeRepr_t`. Every function available on `el` ultimately decays
 to a series of calls to `createNode`.
 
-Typically, you'll only need to pay attention to this API for creating "Composite" nodes, which we discuss in
-[Understanding Memoization](../guides/Understanding_Memoization.md). In that case, you'll pass a function to `createNode`
-along with a set of props and children with which your function will be invoked during the render process.
+Typically, you'll only need to pay attention to this API for creating "Composite" nodes, or for referring to your own
+custom native nodes. A Composite node is simply a node which wraps a function that ultimately produces a node, as shown
+in the example below. The primary difference in using a Composite node is access to the RenderContext which provides
+details of the renderer such as the sample rate.
+
+Example:
 
 ```js
 // An example composite node which composes over two series filters

@@ -61,11 +61,6 @@ in this process of building your graph.
 2. Keys. By default, Elementary will do its best to optimize your graph during the render process, and keys are your best
    utility for helping Elementary see certain optimizations. We discuss keys in detail in [Understanding Keys](./guides/Understanding_Keys).
 
-3. Memoization (or using "Composite Nodes"). Elementary offers aggressive memoization out of the box to improve the performance
-   of your application, but you will need to opt into it by writing what we call "Composite Nodes." This section is likely one
-   that you will not need to consider until your application reaches a size where performance needs consideration, but we discuss
-   it thoroughly in [Understanding Memoization](./guides/Understanding_Memoization).
-
 ## Renderer
 
 The second major component of building an Elementary Audio application is understanding what happens during the render process.
