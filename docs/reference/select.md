@@ -2,7 +2,7 @@
 sidebar_label: el.select
 ---
 
-# el.select([props], g, a, b)
+# el.select(g, a, b)
 
 A simple conditional operator. Given a gate signal, `g`, on the range [0, 1],
 returns the signal `a` when the gate is high, and the signal `b` when the
