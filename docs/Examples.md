@@ -12,6 +12,7 @@ We're also happy to highlight a set of example projects from the community:
 
 * [Elementary Grid](https://github.com/teetow/elementary_grid)
 * [Coincident Spectra](https://github.com/bgins/coincident-spectra)
+* [ADSR](https://github.com/satelllte/adsr)
 
 Want to see your project listed here? Open a pull request by hitting "Edit this page"
 below!
