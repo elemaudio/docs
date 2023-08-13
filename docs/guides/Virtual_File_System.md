@@ -9,6 +9,9 @@ and allows the audio processing nodes to remain lightweight.
 :::info
 While we refer to this feature as a virtual "file system," it's really just a flat storage object
 which maps from an arbitrary string name (key) to a single-channel buffer of audio data (value).
+
+In future versions, the API naming may be updated to reflect this. The native C++ interface already
+referes to the same feature as a "shared resource map."
 :::
 
 ## Loading data into the VFS
@@ -55,7 +58,17 @@ Now we should be ok to render an audio graph which references `sample0` from one
 core.render(el.sample({path: 'sample0'}, 1, 1));
 ```
 
-### With Custom Native Nodes
+## Inspecting
+
+As of v2.1.0, you can now use the `listVirtualFileSystem()` method on the web and offline renderers, or equivalently the `getSharedResourceMapKeys()` method on the `elem::Runtime<FloatType>` interface, to list by name the contents of shared map. This API intentionally does
+not share access to the underlying buffers to ensure immutability and thread safety.
+
+## Pruning
+
+As of v2.1.0, you can also now use the `pruneVirtualFileSystem()` method on the web and offline renderers, or equivalently the `pruneSharedResourceMap()` method on the `elem::Runtime<FloatType>` interface, to remove contents from the shared map that are not actively being used
+by any of the processing graph.
+
+## With Custom Native Nodes
 
 Lastly, if you find yourself needing a custom native node with a dependency on the virtual file system, you
 can access the shared buffer map by overriding `elem::GraphNode<FloatType>::setProperty`. The GraphNode API provides
