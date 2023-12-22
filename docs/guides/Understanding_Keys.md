@@ -19,7 +19,7 @@ let voices = [
 function synth(vs) {
   return el.add(vs.map(function(v) {
     return el.mul(v.gate, el.cycle(v.freq));
-  });
+  }));
 }
 
 core.on('load', function() {
